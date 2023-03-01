@@ -1,0 +1,103 @@
+### getClients
+GET http://localhost:8088/api2/client/list
+
+### updateClientDiscount
+POST http://localhost:8088/api2/client/discount/7057279f-354c-45c1-983b-c4542613e5e8
+Content-Type: application/json
+
+{
+  "discountFirst": 5,
+  "discountSecond": 10
+}
+
+### getProducts
+GET http://localhost:8088/api2/product/list
+
+### getProductInfoById
+GET http://localhost:8088/api2/product/f87dddaa-423e-47f0-8505-09db74cb7447
+Accept: application/json
+
+### getFinalPrice
+POST http://localhost:8088/api2/sale/price
+Content-Type: application/json
+
+{
+  "clientUuid": "7057279f-354c-45c1-983b-c4542613e5e8",
+  "productUuidsWithQuantities": {
+    "f87dddaa-423e-47f0-8505-09db74cb7447": 20
+  }
+}
+
+### getFinalPrice
+POST http://localhost:8088/api2/sale/price
+Content-Type: application/json
+
+{
+  "clientUuid": "7057279f-354c-45c1-983b-c4542613e5e8",
+  "productUuidsWithQuantities": {
+    "f87dddaa-423e-47f0-8505-09db74cb7447": 20,
+    "d5739692-d5ec-4fdb-bb1b-bfafb15fd269": 1
+  }
+}
+
+### registerSale
+POST http://localhost:8088/api2/sale/register
+Content-Type: application/json
+
+{
+  "clientUuid": "7057279f-354c-45c1-983b-c4542613e5e8",
+  "productUuidsWithQuantities": {
+    "f87dddaa-423e-47f0-8505-09db74cb7447": 20
+  },
+  "price": 1365000
+}
+
+### registerSale
+POST http://localhost:8088/api2/sale/register
+Content-Type: application/json
+
+{
+  "clientUuid": "7057279f-354c-45c1-983b-c4542613e5e8",
+  "productUuidsWithQuantities": {
+    "f87dddaa-423e-47f0-8505-09db74cb7447": 20,
+    "d5739692-d5ec-4fdb-bb1b-bfafb15fd269": 1
+  },
+  "price": 1366140
+}
+
+### setProductRating
+POST localhost:8088/api2/product/rating
+Content-Type: application/json
+
+{
+  "clientUuid": "7057279f-354c-45c1-983b-c4542613e5e8",
+  "productUuid": "f87dddaa-423e-47f0-8505-09db74cb7447",
+  "rating": 2
+}
+
+### getStatistic
+POST http://localhost:8088/api2/sale/statistic
+Content-Type: application/json
+
+{
+  "clientUuid": "7057279f-354c-45c1-983b-c4542613e5e8",
+  "productUuid": null
+}
+
+### getStatistic
+POST http://localhost:8088/api2/sale/statistic
+Content-Type: application/json
+
+{
+  "clientUuid": null,
+  "productUuid": "f87dddaa-423e-47f0-8505-09db74cb7447"
+}
+
+### getStatistic
+POST http://localhost:8088/api2/sale/statistic
+Content-Type: application/json
+
+{
+  "clientUuid": null,
+  "productUuid": "d5739692-d5ec-4fdb-bb1b-bfafb15fd269"
+}

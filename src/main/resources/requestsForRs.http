@@ -1,0 +1,120 @@
+### getClients
+GET http://localhost:8088/api1/clientRs/list
+
+### updateClientDiscount
+POST http://localhost:8088/api1/clientRs/discount/7057279f-354c-45c1-983b-c4542613e5e8
+Content-Type: application/xml
+
+<UpdateClientDiscountRequestDto>
+    <discountFirst>1</discountFirst>
+    <discountSecond>2</discountSecond>
+</UpdateClientDiscountRequestDto>
+
+### getProducts
+GET http://localhost:8088/api1/productRs/list
+
+### getProductInfoById
+GET http://localhost:8088/api1/productRs/f87dddaa-423e-47f0-8505-09db74cb7447
+
+### getFinalPrice
+POST http://localhost:8088/api1/saleRs/price
+Content-Type: application/xml
+
+<GetFinalPriceRequestDto>
+    <clientUuid>7057279f-354c-45c1-983b-c4542613e5e8</clientUuid>
+    <productUuidsWithQuantities>
+        <entry>
+            <key>f87dddaa-423e-47f0-8505-09db74cb7447</key>
+            <value>20</value>
+        </entry>
+    </productUuidsWithQuantities>
+</GetFinalPriceRequestDto>
+
+### getFinalPrice
+POST http://localhost:8088/api1/saleRs/price
+Content-Type: application/xml
+
+<GetFinalPriceRequestDto>
+    <clientUuid>7057279f-354c-45c1-983b-c4542613e5e8</clientUuid>
+    <productUuidsWithQuantities>
+        <entry>
+            <key>f87dddaa-423e-47f0-8505-09db74cb7447</key>
+            <value>20</value>
+        </entry>
+        <entry>
+            <key>d5739692-d5ec-4fdb-bb1b-bfafb15fd269</key>
+            <value>1</value>
+        </entry>
+    </productUuidsWithQuantities>
+</GetFinalPriceRequestDto>
+
+### registerSale
+POST http://localhost:8088/api1/saleRs/register
+Content-Type: application/xml
+
+<RegisterSaleRequestDto>
+    <clientUuid>7057279f-354c-45c1-983b-c4542613e5e8</clientUuid>
+    <productUuidsWithQuantities>
+        <entry>
+            <key>f87dddaa-423e-47f0-8505-09db74cb7447</key>
+            <value>20</value>
+        </entry>
+    </productUuidsWithQuantities>
+    <price>1780</price>
+</RegisterSaleRequestDto>
+
+### registerSale
+POST http://localhost:8088/api1/saleRs/register
+Content-Type: application/xml
+
+<RegisterSaleRequestDto>
+    <clientUuid>7057279f-354c-45c1-983b-c4542613e5e8</clientUuid>
+    <productUuidsWithQuantities>
+        <entry>
+            <key>f87dddaa-423e-47f0-8505-09db74cb7447</key>
+            <value>20</value>
+        </entry>
+        <entry>
+            <key>d5739692-d5ec-4fdb-bb1b-bfafb15fd269</key>
+            <value>1</value>
+        </entry>
+    </productUuidsWithQuantities>
+    <price>1873</price>
+</RegisterSaleRequestDto>
+
+### setProductRating
+POST localhost:8088/api1/productRs/rating
+Content-Type: application/xml
+
+<SetProductRatingRequestDto>
+    <clientUuid>7057279f-354c-45c1-983b-c4542613e5e8</clientUuid>
+    <productUuid>f87dddaa-423e-47f0-8505-09db74cb7447</productUuid>
+    <rating>2</rating>
+</SetProductRatingRequestDto>
+
+### getStatistic
+POST http://localhost:8088/api1/saleRs/statistic
+Content-Type: application/xml
+
+<GetStatisticRequestDto>
+    <clientUuid>7057279f-354c-45c1-983b-c4542613e5e8</clientUuid>
+    <productUuid/>
+</GetStatisticRequestDto>
+
+### getStatistic
+POST http://localhost:8088/api1/saleRs/statistic
+Content-Type: application/xml
+
+<GetStatisticRequestDto>
+    <clientUuid/>
+    <productUuid>f87dddaa-423e-47f0-8505-09db74cb7447</productUuid>
+</GetStatisticRequestDto>
+
+### getStatistic
+POST http://localhost:8088/api1/saleRs/statistic
+Content-Type: application/xml
+
+<GetStatisticRequestDto>
+    <clientUuid/>
+    <productUuid>d5739692-d5ec-4fdb-bb1b-bfafb15fd269</productUuid>
+</GetStatisticRequestDto>
