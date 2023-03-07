@@ -152,7 +152,7 @@ public class SaleServiceImpl implements SaleService {
     }
 
     private Long getTotalPrice(int quantity, int discountFinal, Long price) {
-        return ((price * quantity) - (((price * quantity) / 100) * discountFinal));
+        return (((price * quantity) * 100) - ((price * quantity) * discountFinal)) / 100;
     }
 
     private GetStatisticResponseDto formatStatisticForClient(UUID clientUuid) {
